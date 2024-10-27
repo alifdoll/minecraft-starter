@@ -1,6 +1,7 @@
 package net.alif.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.alif.tutorialmod.block.ModBlocks;
 import net.alif.tutorialmod.item.ModCreativeModTabs;
 import net.alif.tutorialmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -30,8 +31,11 @@ public class TutorialMod
     {
         IEventBus modEventBus = context.getModEventBus();
 
+//        Register Items and Blocks Mod
         ModItems.register(modEventBus);
         ModCreativeModTabs.register(modEventBus);
+
+        ModBlocks.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
